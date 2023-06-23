@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Test Javascript</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="fade" id="fadestarwars">        
+        <button class="button button2" onclick="hideStarWarsTitles();init()">Continua</button>
+    </div>
+    <section class="star-wars" id="maincontainerstarwars">
+
+        <div class="crawl">
+          
+          <div class="title">
+            <p>Tanto tempo fa, in una galassia lontana lontana....</p>
+
+            <h1>Sedapta Episode IV</h1>
+            <p>Una nuova speranza</p>
+
+          </div>
+          
+          <p>E' un periodo di guerra civile. Sviluppatori ribelli, programmando da una base segreta, hanno ottenuto la loro prima vittoria contro il malvagio impero dei manager.</p>     
+          <p>Durante la battaglia, backdoor ribelli sono riuscite a rubare i piani segreti dell'arma decisiva dell'impero, la PIVOT NERA, una pivot corazzata di tale potenza da distruggere tutta R & D.</p>
+          <p>Inseguito dai biechi agenti dell'impero, il principe Sergin sfreccia a bordo di un 17/, custode del codice rubato che può salvare il suo popolo e ridare la libertà ad R & D…</p>
+          
+        </div>
+
+      </section>
+      
+    <div class="flex-container">
+        <!-- Main container -->
+        <div id="findpo" class="findpo-main-container" ></div>
+        <!-- Stick man -->
+        <div class="wrapper" id="stick-man" style="visibility: hidden;">
+            <div class="head" id="head"></div>
+            <div class="torso"></div>
+            <div class="leftarm"></div>
+            <div class="rightarm"></div>
+            <div class="leftleg"></div>
+            <div class="leftfoot"></div>
+            <div class="rightleg"></div>
+            <div class="rightfoot"></div>
+        </div>
+        <!-- Menu containers -->
+        <div id="menu" style="visibility: hidden;">
+            <div>
+                <button class="button button5" onclick="init()">restart level</button>
+        
+            </div>
+            <div>
+                Il/i Po che stai cercando :
+                <div id="potosearch"></div>
+            </div>
+        </div>
+  
+    </div>
+
+
+    <!-- <script>
+    init()
+    // var img = document.createElement("img");
+    // img.src = "1.png";
+
+    // var div = document.getElementById("x");
+    // div.appendChild(img);
+    //block.setAttribute("style", "text-align:center");
+
+    </script> -->
+
+</body>
+</html>
