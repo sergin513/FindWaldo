@@ -1,13 +1,18 @@
-NUMBER_OF_PO = 9;
+NUMBER_OF_PO = 2;//9;
 NUMBER_OF_PO_VISIBLE = 1;
-NUMBER_OF_DEV_TESTER = 40;
-FINDPO_MAIN_CONTAINER_WIDTH = 800;//vedi findpo-main-container css
+NUMBER_OF_DEV_TESTER = 8;//40; 
+FINDPO_MAIN_CONTAINER_WIDTH = 1200;//vedi findpo-main-container css
 FINDPO_MAIN_CONTAINER_HEIGHT = 800;//vedi findpo-main-container css
 IMG_DIM = 100;
+PO_FOLDER = "Utilities/PODummy/"; // "PO/"; 
+DEV_TESTERS_FOLDER = "Utilities/DevTestersDummy/"; //"DevTesters/"
+BACKGROUNDS_PATH = "Backgrounds/";
 
 function init(level){
     cleanMainBoard()
     var mainContainer = document.getElementById("findpo");
+    let mainContainerPath = BACKGROUNDS_PATH + randomIntFromInterval(1,3) + ".png";
+    mainContainer.style  = "background-image: url(" + mainContainerPath + "); background-size: cover;";
     let devImages = getDevTesterImages();
     let poImages = getPoImages();
     devImages?.forEach((imgagePo)=>{
@@ -45,7 +50,7 @@ function getPoImages(){
 
         var img = document.createElement("img");
         let randomPoIndex = getPoIndexRandomly();
-        let poImageUrl = "PO/" + randomPoIndex + ".png";
+        let poImageUrl = PO_FOLDER + randomPoIndex + ".png";
         img.src = poImageUrl;
         img.style.height = IMG_DIM + 'px';
         img.style.width  = IMG_DIM + 'px';
@@ -68,7 +73,7 @@ function getPoImages(){
 
 function getPoImage(poIndex){
     var img = document.createElement("img");
-    let poImageUrl = "PO/" + poIndex + ".png";
+    let poImageUrl = PO_FOLDER + poIndex + ".png";
     img.src = poImageUrl;
     img.style.height = IMG_DIM + 'px';
     img.style.width  = IMG_DIM + 'px';
@@ -76,14 +81,14 @@ function getPoImage(poIndex){
 }
 function getPoIndexRandomly(){
     let index = 1;
-    index = randomIntFromInterval(1,9);
+    index = randomIntFromInterval(1,NUMBER_OF_PO);
     return index
 }
 function getDevTesterImages(){
     let arrayOfPos = []
     for (poIndex = 1 ; poIndex < NUMBER_OF_DEV_TESTER+1; poIndex++){
         var img = document.createElement("img");
-        img.src = "DevTesters/" + poIndex + ".png";
+        img.src = DEV_TESTERS_FOLDER + poIndex + ".png";
         img.style.height = IMG_DIM + 'px';
         img.style.width  = IMG_DIM +'px';
         img.style.position ="absolute";
