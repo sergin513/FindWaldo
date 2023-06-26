@@ -10,8 +10,9 @@
 </head>
 
 <body>
+    <!------------------- Prefazione parte 1 ------------------->
     <div class="fade" id="fadestarwars">        
-        <button class="button button2" onclick="hideStarWarsTitles();init()">Continua</button>
+        <button class="button button2" onclick="hideStarWarsTitles();terminalPrefazione2()">Continua</button>
     </div>
     <section class="star-wars" id="maincontainerstarwars">
 
@@ -32,7 +33,19 @@
         </div>
 
       </section>
-      
+    <!------------------- Prefazione parte 2 ------------------->
+    <div class="terminal-titles" id="terminaltitles">
+        <button class="button button2" onclick="hideTerminalTitle();init()" >Continua</button>
+        <div class="terminal">
+            <pre id="terminal">
+                <span class="terminal-text">C:\> </span>
+            </pre>
+            
+        </div>
+    </div>
+
+
+    <!--------------------- MAIN --------------------->
     <div class="flex-container">
         <!-- Main container -->
         <div id="findpo" class="findpo-main-container" ></div>
@@ -60,18 +73,6 @@
         </div>
   
     </div>
-
-
-    <!-- <script>
-    init()
-    // var img = document.createElement("img");
-    // img.src = "1.png";
-
-    // var div = document.getElementById("x");
-    // div.appendChild(img);
-    //block.setAttribute("style", "text-align:center");
-
-    </script> -->
 
 </body>
 </html>

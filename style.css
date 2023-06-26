@@ -9,6 +9,28 @@
     display: flex;
   }
 
+
+/************************** terminal **************************/
+.terminal{
+  background-color: black;
+  color: green;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 20px;
+}
+.terminal-text {
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: green; }
+}
+
+.terminal-titles{
+  visibility: hidden;
+}
 /************************** button **************************/
 .button {
     background-color: #4CAF50; /* Green */

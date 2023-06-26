@@ -132,4 +132,35 @@ function setVisibilityStickMan(visible){
 
     }  
 }
-  
+
+function terminalPrefazione2(){
+    let terminalTitlesContainer = document.getElementById("terminaltitles");
+    terminalTitlesContainer.style = "visibility: visible;"
+    const text = "Hello, recluta ribelle! La guerra con i manager non è ancora terminata. Ho bisogno del tuo aiuto per poterli sconfiggere." + 
+                    "La tua missione sarà "
+    const terminalElement = document.getElementById("terminal");
+
+    function typeWriter(text, i) {
+      if (i < text.length) {
+        terminalElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => typeWriter(text, i), Math.floor(Math.random() * 100) + 50);
+      }
+    }
+
+    typeWriter(text, 0);
+}
+
+function hideTerminalTitle(){
+    let terminalTitlesContainer = document.getElementById("terminaltitles");
+    terminalTitlesContainer.innerHTML = ""
+
+}
+
+// function typeWriter(text, i,terminalElement) {
+//     if (i < text.length) {
+//       terminalElement.innerHTML += text.charAt(i);
+//       i++;
+//       setTimeout(() => typeWriter(text, i), Math.floor(Math.random() * 100) + 50);
+//     }
+//   }
