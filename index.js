@@ -8,6 +8,8 @@ PO_FOLDER = "Utilities/PODummy/"; // "PO/";
 DEV_TESTERS_FOLDER = "Utilities/DevTestersDummy/"; //"DevTesters/"
 BACKGROUNDS_PATH = "Backgrounds/";
 
+
+
 function init(level){
     cleanMainBoard()
     var mainContainer = document.getElementById("findpo");
@@ -28,6 +30,7 @@ function init(level){
 function cleanMainBoard(){
     var mainContainer = document.getElementById("findpo");
     mainContainer.innerHTML = "";
+    // mainContainer.style = ""
     setVisibilityStickMan(false);
     let headContainer = document.getElementById("head");
     headContainer.innerHTML = "";
@@ -109,6 +112,7 @@ function randomIntFromInterval(min, max) {
 function foundPo(po){
     let mainContainer = document.getElementById("findpo");
     mainContainer.innerHTML = "";
+    mainContainer.style = "";
     setVisibilityStickMan(true);
     let headContainer = document.getElementById("head");
     headImg = document.createElement("img");
@@ -118,6 +122,7 @@ function foundPo(po){
     // headImg.style.top = 0 + "px";
     // headImg.style.left = 0 + "px";
     headContainer.appendChild(headImg);
+    poPhrases();
     
 }
 
@@ -136,8 +141,10 @@ function setVisibilityStickMan(visible){
 function terminalPrefazione2(){
     let terminalTitlesContainer = document.getElementById("terminaltitles");
     terminalTitlesContainer.style = "visibility: visible;"
-    const text = "Hello, recluta ribelle! La guerra con i manager non è ancora terminata. Ho bisogno del tuo aiuto per poterli sconfiggere." + 
-                    "La tua missione sarà "
+    const text = "\n Hello, recluta ribelle! \n La guerra con i manager non è ancora terminata.\n Ho bisogno del tuo aiuto per poterli sconfiggere.\n" + 
+                    " La tua missione non sarà affatto facile.\n Dovrai rintracciare per me i servi più fedeli dei manager, gli introvabili, massimi esperti di "+
+                    "escapologia e di fuffologia applica, laureati in arrampicata sugli specchi e call inutili 'I TEMIBILI PO'...";
+
     const terminalElement = document.getElementById("terminal");
 
     function typeWriter(text, i) {
@@ -154,7 +161,7 @@ function terminalPrefazione2(){
 function hideTerminalTitle(){
     let terminalTitlesContainer = document.getElementById("terminaltitles");
     terminalTitlesContainer.innerHTML = ""
-
+    
 }
 
 // function typeWriter(text, i,terminalElement) {
@@ -164,3 +171,21 @@ function hideTerminalTitle(){
 //       setTimeout(() => typeWriter(text, i), Math.floor(Math.random() * 100) + 50);
 //     }
 //   }
+
+function poPhrases(){
+    let listOfPhrases = ["frase1","frase2","frase3","frase4"];
+    let indexPhrase = randomIntFromInterval(0,4);
+
+    const poPhraseElement = document.getElementById("pophrase");
+    const text = listOfPhrases[indexPhrase];
+
+    function typeWriter(text, i) {
+      if (i < text?.length) {
+        poPhraseElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => typeWriter(text, i), Math.floor(Math.random() * 100) + 50);
+      }
+    }
+
+    typeWriter(text, 0);
+}

@@ -51,6 +51,12 @@
 
 
 /************************** stick man **************************/
+.styckman-text{
+  display: block;
+  position: absolute;
+  top: 0
+}
+
 * {
     box-sizing: border-box;
   }

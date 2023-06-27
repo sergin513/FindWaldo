@@ -33,12 +33,12 @@
         </div>
 
       </section>
-    <!------------------- Prefazione parte 2 ------------------->
+    <!----------------- Prefazione parte 2 ----------------->
     <div class="terminal-titles" id="terminaltitles">
         <button class="button button2" onclick="hideTerminalTitle();init()" >Continua</button>
         <div class="terminal">
             <pre id="terminal">
-                <span class="terminal-text">C:\> </span>
+                <span class="terminal-text"></span>
             </pre>
             
         </div>
@@ -49,17 +49,35 @@
     <div class="flex-container">
         <!-- Main container -->
         <div id="findpo" class="findpo-main-container" ></div>
+
+
+
         <!-- Stick man -->
-        <div class="wrapper" id="stick-man" style="visibility: hidden;">
-            <div class="head" id="head"></div>
-            <div class="torso"></div>
-            <div class="leftarm"></div>
-            <div class="rightarm"></div>
-            <div class="leftleg"></div>
-            <div class="leftfoot"></div>
-            <div class="rightleg"></div>
-            <div class="rightfoot"></div>
-        </div>
+
+            <div class="wrapper" id="stick-man" style="visibility: hidden;">
+                <div class="head" id="head"></div>
+                <div class="torso"></div>
+                <div class="leftarm"></div>
+                <div class="rightarm"></div>
+                <div class="leftleg"></div>
+                <div class="leftfoot"></div>
+                <div class="rightleg"></div>
+                <div class="rightfoot"></div>
+            </div>
+
+
+        <!-- <div class="wrapper" id="stick-man" style="visibility: hidden;">
+                <div class="head" id="head"></div>
+                <div class="torso"></div>
+                <div class="leftarm"></div>
+                <div class="rightarm"></div>
+                <div class="leftleg"></div>
+                <div class="leftfoot"></div>
+                <div class="rightleg"></div>
+                <div class="rightfoot"></div>
+            </div> -->
+
+
         <!-- Menu containers -->
         <div id="menu" style="visibility: hidden;">
             <div>
@@ -70,9 +88,14 @@
                 Il/i Po che stai cercando :
                 <div id="potosearch"></div>
             </div>
+        
         </div>
   
     </div>
-
+    <div class="styckman-text"> 
+        <label id="pophrase">
+            <!-- <span class="terminal-text"></span> -->
+        </label>
+    </div>
 </body>
 </html>
