@@ -196,7 +196,7 @@ function terminalPrefazione2(){
     terminalTitlesContainer.style = "visibility: visible;"
     const text = "\n Hello, recluta ribelle! \n La guerra con i manager non è ancora terminata.\n Ho bisogno del tuo aiuto per poterli sconfiggere.\n" + 
                     " La tua missione non sarà affatto facile.\n Dovrai rintracciare per me i servi più fedeli dei manager, gli introvabili, massimi esperti di "+
-                    "escapologia e di fuffologia applica, laureati in arrampicata sugli specchi e call inutili 'I TEMIBILI PO'...";
+                    "escapologia e di fuffologia applicata,\n laureati in arrampicata sugli specchi e call inutili 'I TEMIBILI PO'...";
 
     const terminalElement = document.getElementById("terminal");
 
