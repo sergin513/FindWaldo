@@ -1,23 +1,30 @@
 NUMBER_OF_PO = 2;//9;
+NUMBER_OF_FINAL_BOSSES = 3
 NUMBER_OF_PO_VISIBLE = 1;
 NUMBER_OF_DEV_TESTER = 8;//40; 
 FINDPO_MAIN_CONTAINER_WIDTH = 1200;//vedi findpo-main-container css
 FINDPO_MAIN_CONTAINER_HEIGHT = 800;//vedi findpo-main-container css
 IMG_DIM = 100;
 PO_FOLDER = "Utilities/PODummy/"; // "PO/"; 
+FINAL_BOSSES_FOLDER = "FinalBosses/"; // "PO/"; 
 DEV_TESTERS_FOLDER = "Utilities/DevTestersDummy/"; //"DevTesters/"
 BACKGROUNDS_PATH = "Backgrounds/";
 
 
 
-function init(level){
+function init(isSecretLevel){
     cleanMainBoard()
     cleanPoPhrases();
     var mainContainer = document.getElementById("findpo");
     let mainContainerPath = BACKGROUNDS_PATH + randomIntFromInterval(1,3) + ".png";
     mainContainer.style  = "background-image: url(" + mainContainerPath + "); background-size: cover;";
     let devImages = getDevTesterImages();
-    let poImages = getPoImages();
+    let poImages;
+    if(!isSecretLevel){
+        poImages = getPoImages();
+    } else {
+        poImages = getFinalBosses();
+    }
     devImages?.forEach((imgagePo)=>{
         mainContainer.appendChild(imgagePo);
     })
@@ -46,6 +53,51 @@ function hideStarWarsTitles(){
 
 
 }
+
+function getFinalBosses(){
+    let arrayOfPos = []
+    var poToSearchContainer = document.getElementById("potosearch");
+
+    for (poIndex = 1 ; poIndex < 2; poIndex++){
+
+        var img = document.createElement("img");
+        let randomPoIndex = getFinalBossRandomly();
+        let poImageUrl = FINAL_BOSSES_FOLDER + randomPoIndex + ".png";
+        img.src = poImageUrl;
+        img.style.height = IMG_DIM + 'px';
+        img.style.width  = IMG_DIM + 'px';
+        img.style.position ="absolute";
+        let top = randomIntFromInterval(0,FINDPO_MAIN_CONTAINER_HEIGHT - IMG_DIM - 30);
+        img.style.top = top + "px";
+        let left = randomIntFromInterval(0,FINDPO_MAIN_CONTAINER_WIDTH - IMG_DIM - 30 );
+        img.style.left = left + "px";
+        img.onclick  = ()=>{
+            foundPo(poImageUrl);
+        }
+        arrayOfPos.push(img);
+        let poToSearchImage = getFinalBossImage(randomPoIndex);
+        poToSearchContainer.appendChild(poToSearchImage);
+        
+    }
+    
+    return arrayOfPos;
+}
+
+function getFinalBossImage(poIndex){
+    var img = document.createElement("img");
+    let poImageUrl = FINAL_BOSSES_FOLDER + poIndex + ".png";
+    img.src = poImageUrl;
+    img.style.height = IMG_DIM + 'px';
+    img.style.width  = IMG_DIM + 'px';
+    return img;
+}
+
+function getFinalBossRandomly(){
+    let index = 1;
+    index = randomIntFromInterval(1,NUMBER_OF_FINAL_BOSSES);
+    return index
+}
+
 function getPoImages(){
     let arrayOfPos = []
     var poToSearchContainer = document.getElementById("potosearch");
@@ -181,8 +233,10 @@ function poPhrases(){
                          "O no Carpi no tutto tranne quello\!",
                          "O no Repetto no tutto tranne quello\!",
                          "E \' colpa di CORE.",
-                         "Non è un bug è una feature."];
-    let indexPhrase = randomIntFromInterval(0,8);
+                         "Non è un bug è una feature.",
+                         "Spegni e riaccendi.",
+                         "Scusa sono in riunione"];
+    let indexPhrase = randomIntFromInterval(0,listOfPhrases.length);
     const poPhraseElement = document.getElementById("pophrase");
     const text = listOfPhrases[indexPhrase];
     restartLevelButtonDisable();
