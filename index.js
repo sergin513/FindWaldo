@@ -12,6 +12,7 @@ BACKGROUNDS_PATH = "Backgrounds/";
 
 function init(level){
     cleanMainBoard()
+    cleanPoPhrases();
     var mainContainer = document.getElementById("findpo");
     let mainContainerPath = BACKGROUNDS_PATH + randomIntFromInterval(1,3) + ".png";
     mainContainer.style  = "background-image: url(" + mainContainerPath + "); background-size: cover;";
@@ -173,19 +174,44 @@ function hideTerminalTitle(){
 //   }
 
 function poPhrases(){
-    let listOfPhrases = ["frase1","frase2","frase3","frase4"];
-    let indexPhrase = randomIntFromInterval(0,4);
-
+    let listOfPhrases = ["Scusa ma ho una call devo scappare.",
+                         "Qualcuno ha detto po update? ",
+                         "Non so cosa faccia il mio progetto.",
+                         "Baco CRITICO\!",
+                         "O no Carpi no tutto tranne quello\!",
+                         "O no Repetto no tutto tranne quello\!",
+                         "E \' colpa di CORE.",
+                         "Non è un bug è una feature."];
+    let indexPhrase = randomIntFromInterval(0,8);
     const poPhraseElement = document.getElementById("pophrase");
     const text = listOfPhrases[indexPhrase];
-
+    restartLevelButtonDisable();
     function typeWriter(text, i) {
       if (i < text?.length) {
         poPhraseElement.innerHTML += text.charAt(i);
         i++;
         setTimeout(() => typeWriter(text, i), Math.floor(Math.random() * 100) + 50);
+      } else {
+        restartLevelButtonEnable();
       }
     }
 
     typeWriter(text, 0);
+
+}
+
+function cleanPoPhrases(){
+    const poPhraseElement = document.getElementById("pophrase");
+    poPhraseElement.innerHTML = "";
+}
+
+function restartLevelButtonDisable(){
+    document.getElementById("restartlevel").disabled = true;
+    document.getElementById("restartlevel").classList.add("disabledButton");
+
+  
+}
+function restartLevelButtonEnable(){
+    document.getElementById("restartlevel").disabled = false;
+    document.getElementById("restartlevel").classList.remove("disabledButton");
 }
