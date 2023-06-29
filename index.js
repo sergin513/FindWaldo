@@ -1,13 +1,13 @@
-NUMBER_OF_PO = 2;//9;
+NUMBER_OF_PO = 9;//2;
 NUMBER_OF_FINAL_BOSSES = 3
 NUMBER_OF_PO_VISIBLE = 1;
-NUMBER_OF_DEV_TESTER = 8;//40; 
+NUMBER_OF_DEV_TESTER = 40; //8;
 FINDPO_MAIN_CONTAINER_WIDTH = 1200;//vedi findpo-main-container css
 FINDPO_MAIN_CONTAINER_HEIGHT = 800;//vedi findpo-main-container css
 IMG_DIM = 100;
-PO_FOLDER = "Utilities/PODummy/"; // "PO/"; 
+PO_FOLDER = "PO/"; //"Utilities/PODummy/";
 FINAL_BOSSES_FOLDER = "FinalBosses/"; // "PO/"; 
-DEV_TESTERS_FOLDER = "Utilities/DevTestersDummy/"; //"DevTesters/"
+DEV_TESTERS_FOLDER =  "DevTesters/";//"Utilities/DevTestersDummy/";
 BACKGROUNDS_PATH = "Backgrounds/";
 
 
